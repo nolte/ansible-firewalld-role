@@ -1,17 +1,18 @@
 ---
 dependency:
   name: galaxy
+
 driver:
-  name: docker
+  name: vagrant
+  provider:
+    name: virtualbox
+
 platforms:
   - name: instance
-    image: centos:8
-    command: /sbin/init
-    tmpfs:
-      - /run
-      - /tmp
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    box: generic/centos8
+  - name: instance-lts
+    box: ubuntu/focal64
+
 provisioner:
   name: ansible
   inventory:

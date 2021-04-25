@@ -14,7 +14,7 @@ Config options:
 Requirements
 ------------
 
-Tested on RHEL 7, CentOS 7 and Fedora 29 only.
+Tested on RHEL 7, CentOS 8, Ubuntu 20.04, Fedora 29 only.
 
 Ansible 2.0 or above
 
@@ -192,6 +192,15 @@ Example Playbook
             permanent: true
             immediate: true
         firewalld_purge_services: true
+```
+
+Testing
+-------
+
+For Testing we use a Molecule Vagrant combination, using `pip install -r requirements.txt` for install the required dependencies.
+
+```sh
+molecule test
 ```
 
 License
